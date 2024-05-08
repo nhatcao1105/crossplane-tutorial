@@ -1,0 +1,17 @@
+apiVersion: network.azure.upbound.io/v1beta1
+kind: Subnet
+metadata:
+  name: sub-crossplane
+  annotations:
+    argocd.argoproj.io/sync-wave: "3"
+    argocd.argoproj.io/sync-options: "SkipDryRunOnMissingResource=true"
+spec:
+  providerConfigRef:
+    name: azure-provider
+  forProvider:
+    addressPrefixes:
+      - 10.2.0.0/24
+    resourceGroupNameRef:
+      name: rg-crossplane
+    virtualNetworkNameRef:
+      name: vn-crossplane

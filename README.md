@@ -19,9 +19,11 @@ helm install crossplane \
     --create-namespace \
     --version 1.13.2 \
     crossplane-stable/crossplane
-# Apply application crossplane in Argocd 
-kubectl apply -f argocd.yaml
 
+```
+## Apply application crossplane for AWS resources in Argocd 
+```bash
+kubectl apply -f aws/argocd.yaml
 ```
 ![alt text](image-4.png)
 
@@ -54,11 +56,7 @@ kubectl get nodes
 ```
 ![alt text](image-7.png)
 
-## Create OpenID Connect Provider (OIDC)
-
+## Apply application crossplane for AWS resources in Argocd 
 ```bash
-kubectl apply -f 3-irsa
-kubectl get OpenIDConnectProvider
-kubectl get Addon
+kubectl apply -f azure/argocd.yaml
 ```
-
