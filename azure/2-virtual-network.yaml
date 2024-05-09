@@ -1,0 +1,16 @@
+apiVersion: network.azure.upbound.io/v1beta1
+kind: VirtualNetwork
+metadata:
+  name: vn-crossplane
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
+    argocd.argoproj.io/sync-options: "SkipDryRunOnMissingResource=true"
+spec:
+  providerConfigRef:
+    name: azure-provider
+  forProvider:
+    resourceGroupNameRef:
+      name: rg-crossplane
+    location: Central US
+    addressSpace:
+      - 10.1.0.0/24
