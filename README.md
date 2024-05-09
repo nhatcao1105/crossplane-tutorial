@@ -55,8 +55,32 @@ aws eks update-kubeconfig --name dev-demo --region us-east-2 --profile crossplan
 kubectl get nodes
 ```
 ![alt text](image-7.png)
+![alt text](image-9.png)
 
 ## Apply application crossplane for AWS resources in Argocd 
 ```bash
 kubectl apply -f azure/argocd.yaml
 ```
+## Install Provider needed for Azure Crossplane
+```bash
+kubectl apply -f azure/0-provider.yaml
+```
+## Create Resource Group
+```bash
+kubectl apply -f azure/1-resource-group.yaml
+```
+## Create Virtual Network
+```bash
+kubectl apply -f azure/2-virtual-network.yaml
+```
+
+## Create Subnet reference to Virtual Network above
+```bash
+kubectl apply -f azure/3-subnet.yaml
+```
+## Create AKS
+```bash
+kubectl apply -f azure/4-aks.yaml
+```
+![alt text](image-8.png)
+![alt text](image-10.png)
