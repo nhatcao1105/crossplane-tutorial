@@ -25,7 +25,7 @@ helm install crossplane \
 ```bash
 kubectl apply -f aws/argocd.yaml
 ```
-![alt text](image-4.png)
+![alt text](image-11.png)
 
 
 ## Create AWS VPC using Crossplane
@@ -39,7 +39,7 @@ kubectl get VPC
 kubectl get InternetGateway
 kubectl get RouteTableAssociation
 ```
-![alt text](image.png)
+[ ![] [alt text]](image.png)
 ![alt text](image-6.png)
 ![alt text](image-5.png)
 ## Create EKS Cluster using Crossplane
